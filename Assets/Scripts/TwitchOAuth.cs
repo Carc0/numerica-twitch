@@ -115,6 +115,8 @@ namespace TwitchAPI
 
         public void SetTimeoutMultiplayer(string multiplier)
         {
+            Debug.Log(multiplier);
+
             int.TryParse(multiplier, out timeoutMultiplier);
             if (timeoutMultiplier < 1) timeoutMultiplier = 10;
         }

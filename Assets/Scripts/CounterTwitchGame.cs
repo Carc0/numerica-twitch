@@ -9,6 +9,8 @@ public class CounterTwitchGame : MonoBehaviour
     [SerializeField] private TextMeshProUGUI currentScoreTMP;
     [SerializeField] private TextMeshProUGUI maxScoreTMP;
 
+    [SerializeField] private MacetaController macetaController;
+
     private int currentScore;
 
     private string lastUsername = string.Empty;
@@ -50,14 +52,22 @@ public class CounterTwitchGame : MonoBehaviour
 
     private void OnTwitchMessageReceived(Chatter chatter)
     {
+        if ((chatter.IsCommand("agua") || chatter.IsCommand("water")) && chatter.HasBadge("broadcaster"))
+            macetaController.FillWater();
+
         if (!int.TryParse(chatter.message, out int response)) return;
 
-        string displayName = chatter.IsDisplayNameFontSafe() ? chatter.tags.displayName : chatter.login;
+        if (response == 0)
+            macetaController.CreateTallo();
+        else if (response < 11)
+            macetaController.SetWaterHoja(response);
 
-        if (lastUsername.Equals(displayName)) return;
+        //string displayName = chatter.IsDisplayNameFontSafe() ? chatter.tags.displayName : chatter.login;
 
-        if (response == currentScore + 1) HandleCorrectResponse(displayName, chatter);
-        else HandleIncorrectResponse(displayName, chatter);
+        //if (lastUsername.Equals(displayName)) return;
+
+        //if (response == currentScore + 1) HandleCorrectResponse(displayName, chatter);
+        //else HandleIncorrectResponse(displayName, chatter);
     }
 
     private void HandleCorrectResponse(string displayName, Chatter chatter)
