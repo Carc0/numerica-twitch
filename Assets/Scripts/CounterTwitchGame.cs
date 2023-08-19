@@ -2,6 +2,7 @@ using TMPro;
 using TwitchAPI;
 using TwitchChat;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CounterTwitchGame : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class CounterTwitchGame : MonoBehaviour
     [SerializeField] private TextMeshProUGUI maxScoreTMP;
 
     [SerializeField] private MacetaController macetaController;
+
+    [SerializeField] private Toggle waterModsToggle;
 
     private int currentScore;
 
@@ -26,7 +29,10 @@ public class CounterTwitchGame : MonoBehaviour
 
     private string nextPotentialVIP;
 
+    private bool canWaterMods;
+
     [SerializeField] private GameObject startingCanvas;
+    [SerializeField] private GameObject gameplayCanvas;
 
     private void Start()
     {
@@ -52,8 +58,13 @@ public class CounterTwitchGame : MonoBehaviour
 
     private void OnTwitchMessageReceived(Chatter chatter)
     {
-        if ((chatter.IsCommand("agua") || chatter.IsCommand("water")) && chatter.HasBadge("broadcaster"))
-            macetaController.FillWater();
+        if (chatter.IsCommand("agua") || chatter.IsCommand("water"))
+        {
+            if (chatter.HasBadge("broadcaster") || (canWaterMods && chatter.HasBadge("moderator")))
+            {
+                macetaController.FillWater();
+            }
+        }
 
         if (!int.TryParse(chatter.message, out int response)) return;
 
@@ -68,6 +79,11 @@ public class CounterTwitchGame : MonoBehaviour
 
         //if (response == currentScore + 1) HandleCorrectResponse(displayName, chatter);
         //else HandleIncorrectResponse(displayName, chatter);
+    }
+
+    public void SetWaterMods()
+    {
+        canWaterMods = waterModsToggle.isOn;
     }
 
     private void HandleCorrectResponse(string displayName, Chatter chatter)
@@ -183,6 +199,7 @@ public class CounterTwitchGame : MonoBehaviour
     private void OnChannelJoined()
     {
         startingCanvas.SetActive(false);
+        gameplayCanvas.SetActive(true);
     }
 
     public void ResetHighScore()

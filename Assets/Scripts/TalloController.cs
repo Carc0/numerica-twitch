@@ -42,4 +42,10 @@ public class TalloController : MonoBehaviour
         leftHojaController.DamageSeconds = _seconds;
         rightHojaController.DamageSeconds = _seconds;
     }
+
+    public void SetPlantCanDie(bool _active)
+    {
+        leftHojaController.CanDie = _active;
+        rightHojaController.CanDie = _active;
+    }
 }

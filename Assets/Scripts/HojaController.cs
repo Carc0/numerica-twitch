@@ -6,8 +6,9 @@ public class HojaController : MonoBehaviour
 {
     private Animator animator;
 
-    private bool isCreated;
-    private bool isAlive;
+    private bool isCreated = false;
+    private bool isAlive = false;
+    private bool canDie = false;
 
     public int lives;
 
@@ -15,19 +16,17 @@ public class HojaController : MonoBehaviour
     private float time;
 
     public float DamageSeconds { get => damageSeconds; set => damageSeconds = value; }
+    public bool CanDie { get => canDie; set => canDie = value; }
 
 
     private void Awake()
     {
-        lives = 0;
-        isCreated = false;
-
         animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
-        if (!isAlive) return;
+        if (!isAlive || lives == 0) return;
 
         time += Time.deltaTime;
 
@@ -46,8 +45,7 @@ public class HojaController : MonoBehaviour
         {
             isAlive = true;
             isCreated = true;
-
-            lives = 1;
+            lives = 0;
 
             gameObject.SetActive(true);
         }
@@ -66,7 +64,9 @@ public class HojaController : MonoBehaviour
     {
         lives--;
 
-        if (lives == 1) 
+        lives = Mathf.Max(0, lives);
+
+        if (lives == 0 && CanDie) 
             isAlive = false;
 
         animator.SetTrigger("SetDamage");

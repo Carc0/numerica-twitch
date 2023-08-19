@@ -8,6 +8,7 @@ public class MacetaController : MonoBehaviour
     [SerializeField] private TalloController[] talloControllerArray;
 
     [SerializeField] private TMP_InputField secondsInputField;
+    [SerializeField] private Toggle plantInmunityToggle;
 
     private int waterNumber;
 
@@ -66,6 +67,16 @@ public class MacetaController : MonoBehaviour
         foreach (TalloController talloController in talloControllerArray)
         {
             talloController.SetSecondsWitherLeaf(seconds);
+        }
+    }
+
+    public void SetPlantCanDie()
+    {
+        bool canPlantDie = plantInmunityToggle.isOn;
+
+        foreach (TalloController talloController in talloControllerArray)
+        {
+            talloController.SetPlantCanDie(canPlantDie);
         }
     }
 }
