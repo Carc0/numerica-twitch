@@ -385,7 +385,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<color=#FFE34F>\xBB</color>The plant can die"
+  m_text: "<color=#FFE34F>\xBB</color>Plantica leaves can die"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7cd9337368586d74089447414d72a968, type: 2}
   m_sharedMaterial: {fileID: 7009212365913637915, guid: 7cd9337368586d74089447414d72a968, type: 2}
@@ -11027,10 +11027,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useUUUID: 1
-  loginSuccessMessage: <b>Done!</b><br>You can close this window now!.
+  loginSuccessMessage: <b>Done!</b><br>You can close this window now!
   loginFailMessage: <b>Oops!</b><br>Something bad happened. Please restart de game
     and try again.
-  clientId: czuwugr8r7pm9ind34xpz8y4d0jmo2
+  clientId: rdxibcd46bvlw9tavv2g0bsz40kso0
   portList: 39300000d20400003a300000
 --- !u!4 &1634069027
 Transform:
