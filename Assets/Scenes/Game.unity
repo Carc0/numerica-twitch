@@ -221,8 +221,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de839377a947ea42b8ada1aec745446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hojaType: 1
   lives: 0
-  damageSeconds: 60
 --- !u!95 &7582933
 Animator:
   serializedVersion: 5
@@ -560,8 +560,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de839377a947ea42b8ada1aec745446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hojaType: 1
   lives: 0
-  damageSeconds: 60
 --- !u!95 &19561857
 Animator:
   serializedVersion: 5
@@ -960,8 +960,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de839377a947ea42b8ada1aec745446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hojaType: 1
   lives: 0
-  damageSeconds: 60
 --- !u!95 &67362292
 Animator:
   serializedVersion: 5
@@ -1138,8 +1138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de839377a947ea42b8ada1aec745446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hojaType: 1
   lives: 0
-  damageSeconds: 60
 --- !u!95 &128753363
 Animator:
   serializedVersion: 5
@@ -1260,8 +1260,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb564a6be63af73448f10e9096d12e27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftHojaController: {fileID: 2013814261}
-  rightHojaController: {fileID: 760513760}
+  macetaController: {fileID: 1591818286}
+  hojaLeftController: {fileID: 2013814261}
+  hojaRightController: {fileID: 760513760}
 --- !u!1 &151664050
 GameObject:
   m_ObjectHideFlags: 0
@@ -1361,8 +1362,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb564a6be63af73448f10e9096d12e27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftHojaController: {fileID: 1524150283}
-  rightHojaController: {fileID: 335316579}
+  macetaController: {fileID: 1591818286}
+  hojaLeftController: {fileID: 1524150283}
+  hojaRightController: {fileID: 335316579}
 --- !u!1 &178903355
 GameObject:
   m_ObjectHideFlags: 0
@@ -1462,8 +1464,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb564a6be63af73448f10e9096d12e27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftHojaController: {fileID: 1496392534}
-  rightHojaController: {fileID: 19561856}
+  macetaController: {fileID: 1591818286}
+  hojaLeftController: {fileID: 1496392534}
+  hojaRightController: {fileID: 19561856}
 --- !u!1 &186656283
 GameObject:
   m_ObjectHideFlags: 0
@@ -1781,8 +1784,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb564a6be63af73448f10e9096d12e27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftHojaController: {fileID: 455760118}
-  rightHojaController: {fileID: 67362291}
+  macetaController: {fileID: 1591818286}
+  hojaLeftController: {fileID: 455760118}
+  hojaRightController: {fileID: 67362291}
 --- !u!1 &265918316
 GameObject:
   m_ObjectHideFlags: 0
@@ -2418,8 +2422,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb564a6be63af73448f10e9096d12e27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftHojaController: {fileID: 2069415223}
-  rightHojaController: {fileID: 1679782570}
+  macetaController: {fileID: 1591818286}
+  hojaLeftController: {fileID: 2069415223}
+  hojaRightController: {fileID: 1679782570}
 --- !u!1 &327406438
 GameObject:
   m_ObjectHideFlags: 0
@@ -2652,8 +2657,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de839377a947ea42b8ada1aec745446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hojaType: 1
   lives: 0
-  damageSeconds: 60
 --- !u!95 &335316580
 Animator:
   serializedVersion: 5
@@ -3073,8 +3078,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de839377a947ea42b8ada1aec745446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hojaType: 0
   lives: 0
-  damageSeconds: 60
 --- !u!95 &373590869
 Animator:
   serializedVersion: 5
@@ -3488,8 +3493,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb564a6be63af73448f10e9096d12e27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftHojaController: {fileID: 373590868}
-  rightHojaController: {fileID: 128753362}
+  macetaController: {fileID: 1591818286}
+  hojaLeftController: {fileID: 373590868}
+  hojaRightController: {fileID: 128753362}
 --- !u!1 &452916169
 GameObject:
   m_ObjectHideFlags: 0
@@ -3770,8 +3776,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de839377a947ea42b8ada1aec745446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hojaType: 0
   lives: 0
-  damageSeconds: 60
 --- !u!95 &455760119
 Animator:
   serializedVersion: 5
@@ -4369,8 +4375,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb564a6be63af73448f10e9096d12e27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftHojaController: {fileID: 1127405428}
-  rightHojaController: {fileID: 1230869772}
+  macetaController: {fileID: 1591818286}
+  hojaLeftController: {fileID: 1127405428}
+  hojaRightController: {fileID: 1230869772}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -5112,7 +5119,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1591818286}
         m_TargetAssemblyTypeName: MacetaController, Assembly-CSharp
-        m_MethodName: SetPlantCanDie
+        m_MethodName: SetCanPlantDie
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5514,8 +5521,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de839377a947ea42b8ada1aec745446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hojaType: 1
   lives: 0
-  damageSeconds: 60
 --- !u!95 &760513761
 Animator:
   serializedVersion: 5
@@ -6643,8 +6650,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1591818286}
-        m_TargetAssemblyTypeName: MacetaController, Assembly-CSharp
+      - m_Target: {fileID: 1291943635}
+        m_TargetAssemblyTypeName: CounterTwitchGame, Assembly-CSharp
         m_MethodName: SetWaterMods
         m_Mode: 1
         m_Arguments:
@@ -7269,8 +7276,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de839377a947ea42b8ada1aec745446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hojaType: 0
   lives: 0
-  damageSeconds: 60
 --- !u!95 &1127405429
 Animator:
   serializedVersion: 5
@@ -7599,8 +7606,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de839377a947ea42b8ada1aec745446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hojaType: 0
   lives: 0
-  damageSeconds: 60
 --- !u!95 &1198777890
 Animator:
   serializedVersion: 5
@@ -7804,8 +7811,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de839377a947ea42b8ada1aec745446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hojaType: 1
   lives: 0
-  damageSeconds: 60
 --- !u!95 &1230869773
 Animator:
   serializedVersion: 5
@@ -8330,8 +8337,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de839377a947ea42b8ada1aec745446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hojaType: 0
   lives: 0
-  damageSeconds: 60
 --- !u!95 &1272457141
 Animator:
   serializedVersion: 5
@@ -8389,7 +8396,7 @@ MonoBehaviour:
   currentScoreTMP: {fileID: 496877797}
   maxScoreTMP: {fileID: 288881064}
   macetaController: {fileID: 1591818286}
-  waterModsToggle: {fileID: 0}
+  waterModsToggle: {fileID: 951441078}
   startingCanvas: {fileID: 268515986}
   gameplayCanvas: {fileID: 1993806183}
 --- !u!114 &1291943636
@@ -8962,8 +8969,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de839377a947ea42b8ada1aec745446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hojaType: 0
   lives: 0
-  damageSeconds: 60
 --- !u!95 &1351106092
 Animator:
   serializedVersion: 5
@@ -9302,8 +9309,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb564a6be63af73448f10e9096d12e27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftHojaController: {fileID: 1351106091}
-  rightHojaController: {fileID: 7582932}
+  macetaController: {fileID: 1591818286}
+  hojaLeftController: {fileID: 1351106091}
+  hojaRightController: {fileID: 7582932}
 --- !u!1 &1435049884
 GameObject:
   m_ObjectHideFlags: 0
@@ -9831,8 +9839,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de839377a947ea42b8ada1aec745446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hojaType: 0
   lives: 0
-  damageSeconds: 60
 --- !u!95 &1496392535
 Animator:
   serializedVersion: 5
@@ -10086,8 +10094,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de839377a947ea42b8ada1aec745446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hojaType: 0
   lives: 0
-  damageSeconds: 60
 --- !u!95 &1524150284
 Animator:
   serializedVersion: 5
@@ -10717,7 +10725,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waterImage: {fileID: 2030799240}
-  talloControllerArray:
+  secondsInputField: {fileID: 846835661}
+  plantInmunityToggle: {fileID: 626075558}
+  talloControllers:
   - {fileID: 451180506}
   - {fileID: 1390469178}
   - {fileID: 178903358}
@@ -10728,8 +10738,6 @@ MonoBehaviour:
   - {fileID: 321333189}
   - {fileID: 151664053}
   - {fileID: 229630457}
-  secondsInputField: {fileID: 846835661}
-  plantInmunityToggle: {fileID: 626075558}
 --- !u!1 &1620845498
 GameObject:
   m_ObjectHideFlags: 0
@@ -11220,8 +11228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de839377a947ea42b8ada1aec745446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hojaType: 1
   lives: 0
-  damageSeconds: 60
 --- !u!95 &1679782571
 Animator:
   serializedVersion: 5
@@ -11555,8 +11563,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb564a6be63af73448f10e9096d12e27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftHojaController: {fileID: 1272457140}
-  rightHojaController: {fileID: 1989425822}
+  macetaController: {fileID: 1591818286}
+  hojaLeftController: {fileID: 1272457140}
+  hojaRightController: {fileID: 1989425822}
 --- !u!1 &1765623362
 GameObject:
   m_ObjectHideFlags: 0
@@ -12407,8 +12416,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb564a6be63af73448f10e9096d12e27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftHojaController: {fileID: 1198777889}
-  rightHojaController: {fileID: 2108609746}
+  macetaController: {fileID: 1591818286}
+  hojaLeftController: {fileID: 1198777889}
+  hojaRightController: {fileID: 2108609746}
 --- !u!1 &1979591266
 GameObject:
   m_ObjectHideFlags: 0
@@ -12721,8 +12731,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de839377a947ea42b8ada1aec745446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hojaType: 1
   lives: 0
-  damageSeconds: 60
 --- !u!95 &1989425823
 Animator:
   serializedVersion: 5
@@ -12946,8 +12956,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de839377a947ea42b8ada1aec745446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hojaType: 0
   lives: 0
-  damageSeconds: 60
 --- !u!95 &2013814262
 Animator:
   serializedVersion: 5
@@ -13411,8 +13421,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de839377a947ea42b8ada1aec745446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hojaType: 0
   lives: 0
-  damageSeconds: 60
 --- !u!95 &2069415224
 Animator:
   serializedVersion: 5
@@ -13802,8 +13812,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4de839377a947ea42b8ada1aec745446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hojaType: 1
   lives: 0
-  damageSeconds: 60
 --- !u!95 &2108609747
 Animator:
   serializedVersion: 5

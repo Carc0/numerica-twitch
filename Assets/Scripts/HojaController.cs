@@ -1,9 +1,12 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 
 public class HojaController : MonoBehaviour
 {
+    [SerializeField] private PlantEnums.HojaType hojaType;
+
     private Animator animator;
 
     private bool isCreated = false;
@@ -12,10 +15,10 @@ public class HojaController : MonoBehaviour
 
     public int lives;
 
-    public float damageSeconds = 60.0f;
-    private float time;
+    private int damageSeconds = 60;
+    private float currentTime;
 
-    public float DamageSeconds { get => damageSeconds; set => damageSeconds = value; }
+    public int DamageSeconds { get => damageSeconds; set => damageSeconds = value; }
     public bool CanDie { get => canDie; set => canDie = value; }
 
 
@@ -28,11 +31,11 @@ public class HojaController : MonoBehaviour
     {
         if (!isAlive || lives == 0) return;
 
-        time += Time.deltaTime;
+        currentTime += Time.deltaTime;
 
-        if (time >= damageSeconds)
+        if (currentTime >= damageSeconds)
         {
-            time = 0;
+            currentTime = 0;
             SetDamage();
         }
     }
@@ -54,7 +57,7 @@ public class HojaController : MonoBehaviour
 
         animator.SetTrigger("SetWater");
 
-        time = 0;
+        currentTime = 0;
         lives++;
 
         return true;
@@ -66,7 +69,7 @@ public class HojaController : MonoBehaviour
 
         lives = Mathf.Max(0, lives);
 
-        if (lives == 0 && CanDie) 
+        if (lives == 0 && canDie) 
             isAlive = false;
 
         animator.SetTrigger("SetDamage");

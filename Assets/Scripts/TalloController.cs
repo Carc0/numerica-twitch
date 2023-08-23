@@ -1,14 +1,22 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class TalloController : MonoBehaviour
 {
-    [SerializeField] private HojaController leftHojaController;
-    [SerializeField] private HojaController rightHojaController;
+    [SerializeField] private MacetaController macetaController;
+
+    [SerializeField] private HojaController hojaLeftController;
+    [SerializeField] private HojaController hojaRightController;
 
     private bool isCreated;
 
+    private int witherLeafSeconds = 60;
+    private bool canPlantDie;
+
     public bool IsCreated { get => isCreated; set => isCreated = value; }
+    public bool CanPlantDie { get => canPlantDie; set => canPlantDie = value; }
+    public int WitherLeafSeconds { get => witherLeafSeconds; set => witherLeafSeconds = value; }
 
 
     private void Awake()
@@ -18,34 +26,45 @@ public class TalloController : MonoBehaviour
 
     public void CreateTallo()
     {
+        if (isCreated) return;
+
+        if (macetaController.PointerTallo > 9) return;
+
+        if (macetaController.WaterNumber < 1) return;
+
         gameObject.SetActive(true);
 
         isCreated = true;
+
+        macetaController.CreatedTallo();
     }
 
-    public bool SetWaterHoja(int _response)
+    public void WaterHoja(PlantEnums.HojaType _hojaType)
     {
-        if (!isCreated) return false;
+        if (!isCreated) return;
 
-        bool setWater = false;
+        if (macetaController.WaterNumber < 1) return;
 
-        if (_response < 0)
-            setWater = leftHojaController.SetWater();
+        bool wateredHoja;
+
+        if (_hojaType == PlantEnums.HojaType.Left)
+            wateredHoja = hojaLeftController.SetWater();
         else
-            setWater = rightHojaController.SetWater();
+            wateredHoja = hojaRightController.SetWater();
 
-        return setWater;
+        if (wateredHoja)
+            macetaController.WateredHoja();
     }
 
     public void SetSecondsWitherLeaf(int _seconds)
     {
-        leftHojaController.DamageSeconds = _seconds;
-        rightHojaController.DamageSeconds = _seconds;
+        hojaLeftController.DamageSeconds = _seconds;
+        hojaRightController.DamageSeconds = _seconds;
     }
 
     public void SetPlantCanDie(bool _active)
     {
-        leftHojaController.CanDie = _active;
-        rightHojaController.CanDie = _active;
+        hojaLeftController.CanDie = _active;
+        hojaRightController.CanDie = _active;
     }
 }

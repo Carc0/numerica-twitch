@@ -69,9 +69,9 @@ public class CounterTwitchGame : MonoBehaviour
         if (!int.TryParse(chatter.message, out int response)) return;
 
         if (response == 0)
-            macetaController.CreateTallo();
+            macetaController.CreateTalloCommand();
         else if (response < 11)
-            macetaController.SetWaterHoja(response);
+            macetaController.WaterHojaCommand(response);
 
         //string displayName = chatter.IsDisplayNameFontSafe() ? chatter.tags.displayName : chatter.login;
 

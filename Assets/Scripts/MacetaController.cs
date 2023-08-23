@@ -1,51 +1,70 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class MacetaController : MonoBehaviour
 {
     [SerializeField] private Image waterImage;
-    [SerializeField] private TalloController[] talloControllerArray;
 
     [SerializeField] private TMP_InputField secondsInputField;
     [SerializeField] private Toggle plantInmunityToggle;
+
+    [SerializeField] private TalloController[] talloControllers;
 
     private int waterNumber;
 
     private int pointerTallo;
 
+    public int PointerTallo { get => pointerTallo; set => pointerTallo = value; }
+    public int WaterNumber { get => waterNumber; set => waterNumber = value; }
+
+    public event Action<int> OnSecondsWitherLeaf;
+    public event Action<bool> OnCanPlantDie;
+
 
     private void Start()
     {
         pointerTallo = 0;
-        waterNumber = 0;
 
+        waterNumber = 0;
         waterImage.fillAmount = 0;
     }
 
-    public void SetWaterHoja(int _response)
+    public void WaterHojaCommand(int _response)
     {
-        if (waterNumber == 0) return;
+        //if (waterNumber < 1) return;
 
         int talloNumber = Mathf.Abs(_response) - 1;
 
-        bool takeOffWater = talloControllerArray[talloNumber].SetWaterHoja(_response);
+        PlantEnums.HojaType hojaType = (_response < 0) ? PlantEnums.HojaType.Left : PlantEnums.HojaType.Right;
 
-        if (takeOffWater)
-            TakeOffWater();
+        CommandQueue.Instance.AddCommand(new WaterHojaCommand(talloControllers[talloNumber], hojaType));
     }
 
-    public void CreateTallo()
+    public void CreateTalloCommand()
     {
         if (pointerTallo > 9) return;
 
-        if (waterNumber == 0) return;
+        //if (waterNumber < 1) return;
 
-        talloControllerArray[pointerTallo].CreateTallo();
+        CommandQueue.Instance.AddCommand(new CreateTalloCommand(talloControllers[pointerTallo]));
+
+        //TakeOffWater();
+
+        //pointerTallo++;
+    }
+
+    public void CreatedTallo()
+    {
+        pointerTallo++;
 
         TakeOffWater();
+    }
 
-        pointerTallo++;
+    public void WateredHoja()
+    {
+        TakeOffWater();
     }
 
     public void FillWater()
@@ -57,6 +76,9 @@ public class MacetaController : MonoBehaviour
     private void TakeOffWater()
     {
         waterNumber--;
+
+        waterNumber = Mathf.Max(0, waterNumber);
+
         waterImage.fillAmount = waterNumber / 10.0f;
     }
 
@@ -64,17 +86,17 @@ public class MacetaController : MonoBehaviour
     {
         int seconds = int.Parse(secondsInputField.text);
 
-        foreach (TalloController talloController in talloControllerArray)
+        foreach (TalloController talloController in talloControllers)
         {
             talloController.SetSecondsWitherLeaf(seconds);
         }
     }
 
-    public void SetPlantCanDie()
+    public void SetCanPlantDie()
     {
         bool canPlantDie = plantInmunityToggle.isOn;
 
-        foreach (TalloController talloController in talloControllerArray)
+        foreach (TalloController talloController in talloControllers)
         {
             talloController.SetPlantCanDie(canPlantDie);
         }
